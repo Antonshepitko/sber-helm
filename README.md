@@ -18,37 +18,37 @@
 
   1. Скачайте бинарный файл kubectl для Windows. Для этого откройте PowerShell и выполните следующую команду для скачивания последней версии kubectl:
 
-    ```
+    
     curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
-    ```
+    
 
   2. Добавьте kubectl в переменную среды PATH
   3. Проверьте установку следующей командой:
 
-    ```
+    
     kubectl version --client
-    ```
+    
 
 ### Установка Minikube
 
   1. Откройте PowerShell и выполните следующую команду для скачивания последней версии Minikube: 
 
-    ```
+    
     curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe=
-    ```
+    
   2. Добавьте Minikube в переменную среды PATH
 
 ### Запуск Minikube
   1. Чтобы убедиться, что Minikube был установлен корректно, выполните следующую команду, которая запускает локальный кластер Kubernetes:
 
-    ```
+    
     minikube start --driver=docker
-    ```
+    
   2. Чтобы проверить, успешно ли запущен Minikube, можно использовать команду:
 
-    ```
+    
     minikube status
-    ```
+    
 
 ### Установка Jenkins
 
@@ -67,41 +67,41 @@
    
   4. Создайте volume в Kubernetes:
   
-    ```
+    
     kubectl create -f volume.yaml
-    ```
+    
 
   5. Создайте deployment в Kubernetes:
   
-    ```
+    
     kubectl apply -f deployment.yaml
-    ```
+    
 
 
   6. Создайте service в Kubernetes:
 
-    ```
+    
     kubectl apply -f service.yaml
-    ```
+    
 
   7. Получите внешний IP-адрес и порт сервиса Jenkins:
   
-    ```
+    
     minikube service jenkins-service -n devops-tools --url
-    ```
+    
 
   8. Откройте Jenkins веб-интерфейс по адресу `http://<minikube-ip>:<port>`, используя полученный IP-адрес и порт вместо <minikube-ip> и <port> соответственно:
 - Чтобы узнать `<jenkins-pod-name>` введите команду:
   
-    ```
+    
     kubectl get -n devops-tools Pods
-    ```
+    
 
   9. Получите пароль, введя команду для получения логов, указанную ниже. В таком случае пароль будет находиться внизу:
   
-    ```
+    
     kubectl logs <jenkins-pod-name> --namespace=devops-tools
-    ```
+    
 
 ### Настройка Jenkins
 
@@ -166,13 +166,13 @@
 
   1. Установите IP адрес нода, используя следующую команду:
 
-    ```
+    
     minikube ip
-    ```
+    
 
   2. В браузере откройте следующую ссылку, заменив minikube-ip на ip вашей ноды:
 
-    ```
+    
     http://<minikube-ip>:32080
-    ```
+    
     
