@@ -18,14 +18,14 @@
 
   1. Скачайте бинарный файл kubectl для Windows. Для этого откройте PowerShell и выполните следующую команду для скачивания последней версии kubectl:
 
-    ```bash
+    ```
     curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
     ```
 
   2. Добавьте kubectl в переменную среды PATH
   3. Проверьте установку следующей командой:
 
-    ```bash
+    ```
     kubectl version --client
     ```
 
@@ -55,15 +55,15 @@
   1. Скачайте архив, разархивируйте его, откройте папку jenkins через консоль
   2. Создайте отдельное пространство имён для Jenkins:
   
-    ```
+    
     kubectl create namespace devops-tools
-    ```
+    
    
   3. Создайте serviceAccount в Kubernetes:
   
-    ```
+    
     kubectl apply -f serviceAccount.yaml
-    ```
+    
    
   4. Создайте volume в Kubernetes:
   
