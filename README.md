@@ -93,7 +93,6 @@
   8. Откройте Jenkins веб-интерфейс по адресу `http://<minikube-ip>:<port>`, используя полученный IP-адрес и порт вместо <minikube-ip> и <port> соответственно:
   - Чтобы узнать `<jenkins-pod-name>` введите команду:
   
-    
     kubectl get -n devops-tools Pods
     
 
