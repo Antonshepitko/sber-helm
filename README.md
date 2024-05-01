@@ -18,14 +18,14 @@
 
   1. Скачайте бинарный файл kubectl для Windows. Для этого откройте PowerShell и выполните следующую команду для скачивания последней версии kubectl:
 
-    ```
+    ```bash
     curl -LO https://dl.k8s.io/release/`curl -LS https://dl.k8s.io/release/stable.txt`/bin/linux/amd64/kubectl
     ```
 
   2. Добавьте kubectl в переменную среды PATH
   3. Проверьте установку следующей командой:
 
-    ```
+    ```bash
     kubectl version --client
     ```
 
@@ -170,7 +170,7 @@
     minikube ip
     ```
 
-  2. В браузере откройте следующую ссылку, заменив <minikube-ip> на ip вашей ноды:
+  2. В браузере откройте следующую ссылку, заменив minikube-ip на ip вашей ноды:
 
     ```
     http://<minikube-ip>:32080
