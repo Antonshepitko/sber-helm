@@ -3,7 +3,6 @@ replicaCount: 1
 image:
   repository: nginx
   pullPolicy: IfNotPresent
-
   tag: "latest"
 
 imagePullSecrets: []
@@ -26,6 +25,7 @@ service:
   name: "my_nginx"
   type: NodePort
   port: 80
+  targetPort: 80
   nodePort: 32080
 
 ingress:
