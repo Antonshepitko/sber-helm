@@ -1,4 +1,4 @@
-# sber-helm# Процесс запуска Minikube с Jenkins и создания Jenkins Job для Nginx
+# Процесс запуска Minikube с Jenkins и создания Jenkins Job для Nginx
 
 ## Описание
 
