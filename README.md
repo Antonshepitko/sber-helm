@@ -153,7 +153,7 @@
         }
         stage('Pull Repo') {
             steps {
-                git '[https://github.com/DaniilBo/test-tasks.git](https://github.com/Antonshepitko/sber-helm)'
+                git 'https://github.com/Antonshepitko/sber-helm'
                 sh 'pwd'
                 sh 'ls -l'
             }
