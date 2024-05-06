@@ -139,7 +139,41 @@
           }
           stage('Pull Repo') {
               steps {
-                  git 'https://github.com/DaniilBo/test-tasks.git'
+                  git 'pipeline {
+    agent any
+    stages{
+        stage('Install HELM') {
+            steps {
+                sh 'pwd'
+                sh 'curl -fsSL -o helm.tar.gz https://get.helm.sh/helm-v3.7.2-linux-amd64.tar.gz'
+                sh 'tar -zxvf helm.tar.gz '
+                sh 'chmod +x linux-amd64/helm'
+                sh './linux-amd64/helm version'
+            }
+        }
+        stage('Pull Repo') {
+            steps {
+                git '[https://github.com/DaniilBo/test-tasks.git](https://github.com/Antonshepitko/sber-helm)'
+                sh 'pwd'
+                sh 'ls -l'
+            }
+        }
+        stage('Install Kubectl'){
+            steps {
+                sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
+                sh 'chmod u+x ./kubectl'
+            }
+        }
+        stage('Apply HELM Chart') {
+            steps {
+                withKubeConfig([serverUrl: '<yourServerIP>:8443']) {
+                    sh './linux-amd64/helm upgrade --install nginx-chart /var/jenkins_home/workspace/test-task/nginx-chart -n devops-tools'
+                    sh './kubectl get pods -n devops-tools'
+                }
+            } 
+        } 
+    }
+}          '
                   sh 'pwd'
                   sh 'ls -l'
               }
